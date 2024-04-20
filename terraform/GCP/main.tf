@@ -9,6 +9,7 @@ module "vpc" {
 module "vm" {
   source = "./vm"
   vm_name = "cloudcraft-vm"
-  vm_machine_type = "e2-medium"
+  vm_machine_type = "e2-highcpu-4"
   vpc_name = module.vpc.vpc_name
+  external_ip = module.vpc.static_ip
 }

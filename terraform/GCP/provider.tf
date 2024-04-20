@@ -12,5 +12,6 @@ provider "google" {
   project = "cloudcraft-417903"
   region  = "us-east1"
   zone    = "us-east1-b"
+  credentials = "../../cloudcraft-417903-173a7a6375e4.json"
 }
 

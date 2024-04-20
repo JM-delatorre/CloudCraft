@@ -14,9 +14,10 @@ resource "google_compute_firewall" "vpc_firewall" {
 
   allow {
     protocol = "tcp"
-    ports    = ["25565"]
+    ports    = [
+      "25565", # Minecraft port
+    ]
   }
-
   allow {
     protocol = "tcp"
     ports    = ["22"]
@@ -25,4 +26,8 @@ resource "google_compute_firewall" "vpc_firewall" {
   source_ranges = [
     "0.0.0.0/0"
   ]
+}
+
+resource "google_compute_address" "static" {
+  name = "ipv4-address"
 }
